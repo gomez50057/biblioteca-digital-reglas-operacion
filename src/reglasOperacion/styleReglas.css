@@ -68,14 +68,29 @@ a {
    ========================================================================== */
 
 .home {
+  background-image: url('/public/img/reglas\ de\ operacion/back.png');
   position: relative;
   padding-left: 20px;
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
-  background-color: #2f1b69;
+  background-color: #6FA8DC;
 }
+
+.home_button::before,
+.home_button::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid var(--blanco);
+  border-top: transparent;
+  border-left: transparent;
+} */
 
 /* .background-video {
   position: fixed;
@@ -90,7 +105,7 @@ a {
 .logotipo img {
   position: absolute;
   top: 2.5vw;
-  right: 2.5vw;
+  left: 2.5vw;
   width: 400px;
   height: auto;
 }

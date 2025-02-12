@@ -1,6 +1,5 @@
 import React, { useState, useEffect, forwardRef, useMemo } from "react";
 import { datosBibliotecaDigital } from './utils';
-import styles from "./reglasOperacion.module.css";
 
 
 const imgBasePath = "/img/reglas de operacion/";
@@ -19,11 +18,11 @@ export const BackgroundHome = ({ children }) => {
   };
 
   return (
-    <section className={`${styles.home} home`}>
+    <section className="home">
       {/* <video autoPlay loop muted playsInline className="background-video">
         <source src={`${imgBasePath}homeDigital.mp4`} type="video/mp4" />
       </video> */}
-      <div className={`${styles.logotipo}`}>
+      <div className="logotipo">
         <img src={`${imgBasePath}Logotipo.png`} alt="Logo de la Unidad Planeación" />
       </div>
       <div className="homeText">
@@ -46,7 +45,7 @@ export const BackgroundHome = ({ children }) => {
       </div>
 
       <div className="container_home-button " onClick={handleButtonClick}>
-        <button aria-label="Botón de desplazamiento hacia abajo" className={`${styles.home_button} home-button scroll-down`} onClick={handleButtonClick}></button>
+        <button aria-label="Botón de desplazamiento hacia abajo" className="home-button scroll-down" onClick={handleButtonClick}></button>
       </div>
 
       {forwardRef.current && <AboutUs ref={forwardRef} />}
@@ -128,7 +127,7 @@ export const AboutUs = forwardRef(({ children }, ref) => {
       <div className="AboutUsIMG">
         <img src="img/leyendo.webp" alt="Persona leyendo nube de palabras" loading="lazy" />
       </div>
-      <div className={`${styles.AboutUstxt} AboutUstxt`}>
+      <div className="AboutUstxt">
         <h2 className="wow animate__animated animate__fadeInRight"><span>Reglas de Operación</span> de Hidalgo 2025</h2>
         <p className="wow animate__animated animate__fadeInRight"> Te encuentras en la sección especializada en las <span>Reglas de Operación</span> de los programas que impulsa el Gobierno del Estado de Hidalgo.  Aquí tendrás acceso a información actualizada para el año 2025, con todos los detalles sobre los lineamientos, criterios y procedimientos que rigen la implementación y gestión de cada uno de estos programas. Este espacio ha sido diseñado para que puedas consultar de forma ágil, clara y transparente, facilitando tu acceso a información confiable y actualizada.</p>
         <h3 className="wow animate__animated animate__fadeInRight"><span>¿Qué son las</span> Reglas de Operación?</h3>

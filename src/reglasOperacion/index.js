@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef } from "react";
 import { MuuriComponent, AutoScroller, useData } from "muuri-react";
 import { Demo, Documents, BackgroundHome, AboutUs, Select, Input, Switch, CardContent, Foouter } from "./components";
 import { datosBibliotecaDigital, useFilter } from "./utils";
-import "../style.css";
+// import "../style.css";
 import "./styleReglas.css";
 
 import WOW from 'wow.js';
@@ -68,7 +68,7 @@ const AppReglas = () => {
   const scrollElemRef = useRef();
 
   return (
-    <div>
+    <div className="reglasOperacion">
       <BackgroundHome />
       <AboutUs />
       <Demo>
