@@ -1,11 +1,10 @@
 import React, { useState, useEffect, forwardRef, useMemo } from "react";
 import { datosBibliotecaDigital } from './utils';
-
+import styles from "./reglasOperacion.module.css";
 
 const imgBasePath = "/img/reglas de operacion/";
 const imgFront_pagePath = "/img/caratulas/";
 const imgFront_personal = "/img/caratulas/portadaPersonal/";
-
 const imgFeaturedPath = "/img/caratulas/destacadas/";
 
 // Home component.
@@ -18,34 +17,32 @@ export const BackgroundHome = ({ children }) => {
   };
 
   return (
-    <section className="home">
-      {/* <video autoPlay loop muted playsInline className="background-video">
+    <section className={styles.home}>
+      {/* <video autoPlay loop muted playsInline className={styles["background-video"]}>
         <source src={`${imgBasePath}homeDigital.mp4`} type="video/mp4" />
       </video> */}
-      <div className="logotipo">
+      <div className={styles.logotipo}>
         <img src={`${imgBasePath}Logotipo.png`} alt="Logo de la Unidad Planeación" />
       </div>
-      <div className="homeText">
+      <div className={styles.homeText}>
         <img src={`${imgBasePath}homeText.svg`} alt="Logo de Biblioteca Digital de Planeación" />
       </div>
-      {/* <div className="containerHome_h">
-        <div className="homeBar"></div>
+      {/* <div className={styles.containerHome_h}>
+        <div className={styles.homeBar}></div>
         <div>
-          <h3 className="homeh2">"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."</h3>
-          <h3 className="homeh3">- Julio Menchaca Salazar</h3>
+          <h3 className={styles.homeh2}>"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."</h3>
+          <h3 className={styles.homeh3}>- Julio Menchaca Salazar</h3>
         </div>
       </div> */}
 
-      <div className="homeImg">
+      <div className={styles.homeImg}>
         <img src={`${imgBasePath}homeImg.svg`} alt="Logo de Biblioteca Digital de Planeación" />
       </div>
       <div>
-
-
       </div>
 
-      <div className="container_home-button " onClick={handleButtonClick}>
-        <button aria-label="Botón de desplazamiento hacia abajo" className="home-button scroll-down" onClick={handleButtonClick}></button>
+      <div className={styles["container_home-button"]} onClick={handleButtonClick}>
+        <button aria-label="Botón de desplazamiento hacia abajo" className={`${styles["home-button"]} ${styles["scroll-down"]}`} onClick={handleButtonClick}></button>
       </div>
 
       {forwardRef.current && <AboutUs ref={forwardRef} />}
@@ -55,6 +52,7 @@ export const BackgroundHome = ({ children }) => {
 };
 
 // aboutUs component.
+// aboutUs component.
 export const AboutUs = forwardRef(({ children }, ref) => {
   const [count, setCount] = useState(0);
   const [duration, setDuration] = useState(4000);
@@ -63,26 +61,23 @@ export const AboutUs = forwardRef(({ children }, ref) => {
   const targetCount = useMemo(() => {
     // Obtener una matriz de todos los valores de booksIndex
     const booksIndexes = datosBibliotecaDigital.cards.map(card => parseInt(card.booksIndex));
-
     // Encontrar el valor máximo
     const maxBooksIndex = Math.max(...booksIndexes);
-
     // Asegurarse de que sea un número válido
     return !isNaN(maxBooksIndex) ? maxBooksIndex : 0;
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const element = document.querySelector('.AboutUs');
+      // Se obtiene el elemento por su id
+      const element = document.getElementById('aboutUs');
       if (element) {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-
+        const { top, bottom } = element.getBoundingClientRect();
         // Ajusta estos valores según sea necesario para activar el conteo en el momento deseado
         const triggerTop = window.innerHeight * 0.5; // Activar cuando el 50% del componente sea visible
         const triggerBottom = window.innerHeight * 0.3; // Desactivar cuando el 70% del componente esté fuera de vista
 
-        if (elementTop < triggerTop && elementBottom > triggerBottom) {
+        if (top < triggerTop && bottom > triggerBottom) {
           setIsVisible(true);
         } else {
           setIsVisible(false);
@@ -91,17 +86,15 @@ export const AboutUs = forwardRef(({ children }, ref) => {
     };
 
     window.addEventListener('scroll', handleScroll);
-
+    // Ejecutamos handleScroll inmediatamente en caso de que el componente ya esté visible
+    handleScroll();
     // Limpieza del evento al desmontar el componente
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     if (isVisible) {
       const interval = duration / targetCount;
-
       const counterInterval = setInterval(() => {
         setCount((prevCount) => {
           if (prevCount < 10) {
@@ -121,20 +114,28 @@ export const AboutUs = forwardRef(({ children }, ref) => {
     }
   }, [isVisible, duration, targetCount]);
 
-
   return (
-    <section id="aboutUs" ref={ref} className="AboutUs">
-      <div className="AboutUsIMG">
+    <section id="aboutUs" ref={ref} className={styles.AboutUs}>
+      <div className={styles.AboutUsIMG}>
         <img src="img/leyendo.webp" alt="Persona leyendo nube de palabras" loading="lazy" />
       </div>
-      <div className="AboutUstxt">
-        <h2 className="wow animate__animated animate__fadeInRight"><span>Reglas de Operación</span> de Hidalgo 2025</h2>
-        <p className="wow animate__animated animate__fadeInRight"> Te encuentras en la sección especializada en las <span>Reglas de Operación</span> de los programas que impulsa el Gobierno del Estado de Hidalgo.  Aquí tendrás acceso a información actualizada para el año 2025, con todos los detalles sobre los lineamientos, criterios y procedimientos que rigen la implementación y gestión de cada uno de estos programas. Este espacio ha sido diseñado para que puedas consultar de forma ágil, clara y transparente, facilitando tu acceso a información confiable y actualizada.</p>
-        <h3 className="wow animate__animated animate__fadeInRight"><span>¿Qué son las</span> Reglas de Operación?</h3>
-        <p className="wow animate__animated animate__fadeInRight">Son un conjunto de disposiciones normativas que establecen cómo debe funcionar un programa gubernamental. Definen de forma clara los procedimientos, criterios y lineamientos que garantizan su correcta implementación, asegurando niveles óptimos de eficacia, eficiencia, equidad y transparencia en el uso de los recursos públicos.</p>
-
-        <p className="wow animate__animated animate__fadeInRight"><span>Con la Biblioteca Digital de Planeación, contribuimos a llevar a Hidalgo a su máximo potencial.</span> </p>
-        <div className="contadorlibros wow animate__animated animate__slideInDown" >
+      <div className={styles.AboutUstxt}>
+        <h2 className="wow animate__animated animate__fadeInRight">
+          <span>Reglas de Operación</span> de Hidalgo 2025
+        </h2>
+        <p className="wow animate__animated animate__fadeInRight">
+          Te encuentras en la sección especializada en las <span>Reglas de Operación</span> de los programas que impulsa el Gobierno del Estado de Hidalgo. Aquí tendrás acceso a información actualizada para el año 2025, con todos los detalles sobre los lineamientos, criterios y procedimientos que rigen la implementación y gestión de cada uno de estos programas. Este espacio ha sido diseñado para que puedas consultar de forma ágil, clara y transparente, facilitando tu acceso a información confiable y actualizada.
+        </p>
+        <h3 className="wow animate__animated animate__fadeInRight">
+          <span>¿Qué son las</span> Reglas de Operación?
+        </h3>
+        <p className="wow animate__animated animate__fadeInRight">
+          Son un conjunto de disposiciones normativas que establecen cómo debe funcionar un programa gubernamental. Definen de forma clara los procedimientos, criterios y lineamientos que garantizan su correcta implementación, asegurando niveles óptimos de eficacia, eficiencia, equidad y transparencia en el uso de los recursos públicos.
+        </p>
+        <p className="wow animate__animated animate__fadeInRight">
+          <span>Con la Biblioteca Digital de Planeación, contribuimos a llevar a Hidalgo a su máximo potencial.</span>
+        </p>
+        <div className={`${styles.contadorlibros} wow animate__animated animate__slideInDown`}>
           <img src="img/librosTotal.webp" alt="Icono de libro digital" />
           <p>{count} <span>Reglas de Operación</span></p>
         </div>

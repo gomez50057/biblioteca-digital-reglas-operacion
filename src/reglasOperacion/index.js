@@ -68,7 +68,7 @@ const AppReglas = () => {
   const scrollElemRef = useRef();
 
   return (
-    <div className="reglasOperacion">
+    <div>
       <BackgroundHome />
       <AboutUs />
       <Demo>
