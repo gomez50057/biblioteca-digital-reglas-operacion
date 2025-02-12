@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from "react";
 import { MuuriComponent, AutoScroller, useData } from "muuri-react";
-import { Demo, Documents, BackgroundHome, AboutUs, Select, Input, Switch, CardContent, Foouter } from "./components";
+import { Demo, Documents, BackgroundHome, AboutUs, InfiniteLogoScroll, Select, Input, Switch, CardContent, Foouter } from "./components";
 import { datosBibliotecaDigital, useFilter } from "./utils";
 // import "../style.css";
 import "./styleReglas.css";
@@ -70,6 +70,7 @@ const AppReglas = () => {
   return (
     <div>
       <BackgroundHome />
+      <InfiniteLogoScroll />
       <AboutUs />
       <Demo>
         <Documents>

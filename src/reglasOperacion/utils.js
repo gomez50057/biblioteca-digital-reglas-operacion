@@ -408,3 +408,40 @@ datosBibliotecaDigital.cards = datosBibliotecaDigital.cards.map(card => ({
   ...card,
   types: card.types ? card.types.map(type => type.toLowerCase().trim()) : [] // Convierte a minúsculas
 }));
+
+
+export const logos = [
+  "Agencia Estatal de Energía de Hidalgo",
+  "Centro de Justicia para las Mujeres",
+  "Comisión Estatal de Vivienda",
+  "Comisión Estatal para el Desarrollo Sostenible de los Pueblos Indígenas",
+  "Consejo de Ciencia, Tecnología e Innovación de Hidalgo",
+  "Consejo Estatal para la Cultura y las Artes de Hidalgo",
+  "Instituto Hidalguense de Educación",
+  "Instituto Hidalguense de Educación para Adultos",
+  "Instituto Hidalguense de la Competitividad Empresarial",
+  "Instituto Hidalguense de la Juventud",
+  "Instituto Hidalguense de las Mujeres",
+  "Instituto Hidalguense del Deporte",
+  "Instituto para la Atencíon de las y los Adultos Mayores del Estado de Hidalgo",
+  "Instituto Tecnológico Superior de Huichapan",
+  "La ciudad de las Mujeres",
+  "Secretaría de Agricultura y Desarrollo Rural",
+  "Secretaría de Bienestar e Inclusión Social",
+  "Secretaría de Contraloría",
+  "Secretaría de Cultura",
+  "Secretaría de Desarrollo Económico",
+  "Secretaría de Educación Pública",
+  "Secretaría de Gobierno",
+  "Secretaría de Infraestructura Pública y Desarrollo Urbano Sostenible",
+  "Secretaría del Trabajo y Previsión Social",
+  "Sistema para el Desarrollo Integral de la Familia del Estado de Hidalgo",
+  "Universidad Politécnica de Tulancingo",
+  "Universidad Politécnica Metropolitana de Hidalgo",
+  "Universidad Tecnológica de la Huasteca Hidalguense",
+  "Universidad Tecnológica de la Sierra Hidalguense",
+  "Universidad Tecnológica de Tula-Tepeji",
+  "Universidad Tecnológica de Tulancingo",
+  "Universidad Tecnológica del Valle del Mezquital",
+  "Comisión Ejecutiva de Atención a Víctimas del Estado"
+];

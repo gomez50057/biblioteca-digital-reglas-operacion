@@ -467,7 +467,7 @@ a {
 }
 
 .AboutUstxt h2 span,
-.AboutUstxt h3 span{
+.AboutUstxt h3 span {
   color: var(--doradoOsc);
   font-size: 2.5rem;
   font-style: italic;
@@ -1585,6 +1585,61 @@ img {
   }
 }
 
+/* ==========================================================================
+   SCROLL INFINITO DE LOGOS 
+   ========================================================================== */
+.scroll {
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  width: 1200px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+  perspective: 1000px;
+  /* Para el efecto 3D */
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.scroll img {
+  width: 350px;
+  margin: 0 20px;
+  transition: transform 0.5s, filter 0.5s;
+  cursor: pointer;
+  transform: translateZ(0);
+}
+
+.scroll img:not(:hover) {
+  filter: grayscale(100%);
+}
+
+.scroll img:hover {
+  transform: scale(1.05) rotateY(10deg);
+  filter: none;
+}
+
+.scroll div {
+  white-space: nowrap;
+  animation: animate 200s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll:hover div {
+  animation-play-state: paused;
+}
 
 /* ==========================================================================
    ANIMACIONES ADICIONALES

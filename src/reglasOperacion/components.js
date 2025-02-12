@@ -1,8 +1,10 @@
 import React, { useState, useEffect, forwardRef, useMemo } from "react";
 import { datosBibliotecaDigital } from './utils';
+import { logos } from './utils';
 import styles from "./reglasOperacion.module.css";
 
 const imgBasePath = "/img/reglas de operacion/";
+const imgLogos = "/img/reglas de operacion/logos/";
 const imgFront_pagePath = "/img/caratulas/";
 const imgFront_personal = "/img/caratulas/portadaPersonal/";
 const imgFeaturedPath = "/img/caratulas/destacadas/";
@@ -187,6 +189,34 @@ HOLA    </div>
     {children}
   </section>
 );
+
+
+export const InfiniteLogoScroll = () => {
+  return (
+    <div className={styles.scroll}>
+      <div>
+        {logos.map((nombre, index) => (
+          <img
+            key={`first-${index}`}
+            src={`${imgLogos}${nombre}.png`}
+            alt={`logo de ${nombre}`}
+            className={styles.logo}
+          />
+        ))}
+      </div>
+      <div>
+        {logos.map((nombre, index) => (
+          <img
+            key={`second-${index}`}
+            src={`${imgLogos}${nombre}.png`}
+            alt={`logo de ${nombre}`}
+            className={styles.logo}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 // Documents component.
 export const Documents = ({ children }) => (
