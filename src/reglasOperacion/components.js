@@ -18,23 +18,12 @@ export const BackgroundHome = ({ children }) => {
 
   return (
     <section className={styles.home}>
-      {/* <video autoPlay loop muted playsInline className={styles["background-video"]}>
-        <source src={`${imgBasePath}homeDigital.mp4`} type="video/mp4" />
-      </video> */}
       <div className={styles.logotipo}>
         <img src={`${imgBasePath}Logotipo.png`} alt="Logo de la Unidad Planeación" />
       </div>
       <div className={styles.homeText}>
         <img src={`${imgBasePath}homeText.svg`} alt="Logo de Biblioteca Digital de Planeación" />
       </div>
-      {/* <div className={styles.containerHome_h}>
-        <div className={styles.homeBar}></div>
-        <div>
-          <h3 className={styles.homeh2}>"El conocimiento nos guía en la búsqueda de respuestas y soluciones para el bien común."</h3>
-          <h3 className={styles.homeh3}>- Julio Menchaca Salazar</h3>
-        </div>
-      </div> */}
-
       <div className={styles.homeImg}>
         <img src={`${imgBasePath}homeImg.svg`} alt="Logo de Biblioteca Digital de Planeación" />
       </div>
@@ -51,7 +40,6 @@ export const BackgroundHome = ({ children }) => {
   );
 };
 
-// aboutUs component.
 // aboutUs component.
 export const AboutUs = forwardRef(({ children }, ref) => {
   const [count, setCount] = useState(0);
@@ -194,9 +182,8 @@ export const Featured = ({ children }) => {
 // Demo component.
 export const Demo = ({ children }) => (
   <section className="grid-demo">
-    {/* <div className="ImgBanda" >
-      <img src={`${imgBasePath}banda.webp`} alt="Banda con glifos de Hidalgo" />
-    </div> */}
+    <div className="ImgBanda" >
+HOLA    </div>
     {children}
   </section>
 );
