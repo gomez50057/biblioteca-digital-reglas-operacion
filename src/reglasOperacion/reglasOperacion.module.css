@@ -1,0 +1,204 @@
+/* .AboutUstxt h2,
+.AboutUstxt h3 {
+  width: 100%;
+  height: auto;
+  color: var(--grisOsc);
+  text-align: justify;
+  padding: 0 3vw 0 3vw;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.AboutUstxt h2 span,
+.AboutUstxt h3 span{
+  color: var(--doradoOsc);
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+.home {
+  background-image: url('/public/img/reglas\ de\ operacion/back.png');
+  padding-left: 20px;
+}
+
+.logotipo img {
+  position: absolute;
+  top: 2.5vw;
+  left: 2.5vw;
+  width: 400px;
+  height: auto;
+}
+
+.home_button::before,
+.home_button::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 2px solid var(--blanco);
+  border-top: transparent;
+  border-left: transparent;
+} */
+
+@media screen and (max-width: 550px) {
+
+  .subtitulo {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  /* Home */
+
+  .logotipo img {
+    top: 5vw;
+    left: 50%;
+    width: 360px;
+    transform: translateX(-50%);
+  }
+
+
+  .homeh2,
+  .homeh3 {
+    text-align: left;
+  }
+
+  .homeh3 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .homeh2 {
+    font-size: 20px;
+  }
+
+
+  /* AboutUs */
+  .AboutUs {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .AboutUsIMG img {
+    width: 250px;
+  }
+
+  .AboutUstxt {
+    width: 80%;
+  }
+
+  .AboutUstxt p {
+    font-size: 12px;
+  }
+
+  .contadorlibros img {
+    width: 50px;
+  }
+
+  .contadorlibros p {
+    font-size: 50px;
+  }
+
+  /* Featured */
+  .featured {
+    height: 40vh;
+    justify-content: flex-start;
+  }
+
+  .featured .containerSubTi {
+    padding-top: 40px;
+  }
+
+  .featured .item {
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+
+  .featured .item img {
+    width: 120px;
+    height: auto;
+    margin: 5vh -15px 0 -15px;
+    transition: transform 0.5s, margin 0.5s, filter 0.5s;
+  }
+
+  .featured .item:hover {
+    transform: scale(1.2) rotateY(0deg);
+  }
+
+  .featured .item:not(:hover) {
+    transform: rotateY(60deg);
+  }
+
+  /* Banner */
+  .grid-demo .ImgBanda img {
+    height: 159vh;
+    width: auto;
+    left: -8vw;
+  }
+
+  /* Foouter */
+  .foouter {
+    height: 15vh;
+    border-radius: 25px 25px 0px 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .footer_redes {
+    justify-content: space-evenly;
+    width: 95vw;
+  }
+
+  .foouterBar {
+    width: 2.5px;
+    height: 30px;
+    margin-left: 20px;
+  }
+
+  .footer_redes img {
+    height: 20px;
+  }
+
+  .footer_redes p {
+    font-size: 29px;
+  }
+  
+ 
+  
+
+  .fooutertxt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .foouterInfo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .foouter .foouterLogo img {
+    width: 350px;
+    height: auto;
+  }
+
+  .fooutertxt h1 {
+    font-size: 10px;
+  }
+
+  .fooutertxt h2,
+  .fooutertxt p {
+    font-size: 8px;
+  }
+
+  .foouterUbicacion img {
+    width: 10px;
+  }
+}
